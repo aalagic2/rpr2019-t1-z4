@@ -25,5 +25,22 @@ class SupermarketTest {
   }
   assertTrue(izbaceno);
   }
-
+@Test
+    void dodajArtikl () {
+    Supermarket supermarket = new Supermarket();
+    supermarket.dodajArtikl(new Artikl ("Keks", 900, "21"));
+    boolean nadjeno=false;
+    Artikl [] artikli=supermarket.getArtikli();
+    for (int i=0; i<artikli.length; i++) {
+        if (artikli[i] != null)
+        {
+            if (artikli[i].getKod().equals("21"))
+            {
+                nadjeno=true;
+                break;
+            }
+        }
+}
+    assertTrue(nadjeno);
+}
 }
